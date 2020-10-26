@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-app-deployment
+  name: otus-hw-deployment
   labels:
-    app: hello-app
+    app: otus-hw
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-app
+      app: otus-hw
   template:
     metadata:
       labels:
-        app: hello-app
+        app: otus-hw
     spec:
       containers:
-      - name: hello-app
-        imagePullPolicy: IfNotPresent
-        image: krtvand/hello_app:latest
+      - name: otus-hw
+        image: krtvand/otus-hw:1.0
         ports:
         - containerPort: 8000
         livenessProbe:
           httpGet:
             path: /liveness
+            port: 8000

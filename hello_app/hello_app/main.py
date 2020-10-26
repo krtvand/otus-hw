@@ -23,7 +23,6 @@ app = web.Application()
 app.add_routes(
     [
         web.get('/', handle),
-        web.get('/{name}', handle),
         web.get('/health', health),
         web.get('/liveness', liveness),
         web.get('/readiness', readiness),
